@@ -5,8 +5,9 @@ git설정
 git config --global user.name "Kang"
 git config --global user.email"gang0730@shingu.ac.kr"
 
-
+어디갔어
 두번째 수정
+
 
 2024-9-19 깃허브연동실습
 로컬에서 편집함
