@@ -5,7 +5,7 @@ git설정
 git config --global user.name "Kang"
 git config --global user.email"gang0730@shingu.ac.kr"
 
-어디갔어
+
 두번째 수정
 
 
