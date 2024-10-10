@@ -1,6 +1,6 @@
 //https://github.com/gang-0730/project1-2024
 
-GOOGLEAPI_KEY = "AIzaSyBmdox3_8lmP9zGYQkrad3OBKsxKbN31Kg"
+GOOGLEAPI_KEY = ""
 function processFile(event){
     content = event.target.result
     imagestring = content.replace('data:image/jpeg;base64,','')
