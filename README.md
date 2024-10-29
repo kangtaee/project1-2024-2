@@ -1,5 +1,18 @@
 # project1-2024
 2024-2학기 캡스톤프로젝트 수업
+OpenAPI를 사용한 이공지능 시스템 실습
+
+
+## 💻 My Stack
+<img alt="Html" src ="https://img.shields.io/badge/HTML5-E34F26.svg?&style=for-the-badge&logo=HTML5&logoColor=white"/> <img alt="Css" src ="https://img.shields.io/badge/CSS3-1572B6.svg?&style=for-the-badge&logo=CSS3&logoColor=white"/>
+ <img alt="JavaScript" src ="https://img.shields.io/badge/JavaScriipt-F7DF1E.svg?&style=for-the-badge&logo=JavaScript&logoColor=black"/> <img alt="Python" src ="https://img.shields.io/badge/Python-3776AB.svg?&style=for-the-badge&logo=Python&logoColor=white"/> 
+<img src="https://camo.githubusercontent.com/79294344b1426e5ae031d11f7a684afe94fb2a9e35c88ab50706c067893756af/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f56697375616c25323053747564696f253230436f64652d3030374143433f7374796c653d666f722d7468652d6261646765266c6f676f3d76697375616c2d73747564696f2d636f6465266c6f676f436f6c6f723d7768697465">
+<img src="https://camo.githubusercontent.com/f661807b4046d822de960b43ec69a1dcf63c918c18676797c8bcac8abe87ae0b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6a51756572792d3037363941443f7374796c653d666f722d7468652d6261646765266c6f676f3d6a7175657279266c6f676f436f6c6f723d7768697465">
+
+## 💻 ...
+<a href = "https://github.com/Hun-Se"><img alt="GitHub" src ="https://img.shields.io/badge/GitHub-181717.svg?&style=for-the-badge&logo=GitHub&logoColor=white"/>
+</a> <a href = "https://for-it-study.tistory.com/"> <img alt="Tistory" src ="https://img.shields.io/badge/Tistory-white.svg?&style=for-the-badge"/></a>
+</a> <a href = "hun-se.slack.com"> <img alt="Slack" src ="https://img.shields.io/badge/Slack-4A154B.svg?&style=for-the-badge&logo=Slack&logoColor=white"/></a>
 
 # openweathermap
 
@@ -27,11 +40,13 @@ $.ajax({
 
 # openAI
 
-chatgpt 개발하기
+OpenAI에서 제공하는 텍스트새엇ㅇ 및 이미지 생성 실습 텍스트생성
+
+
 https://api.openai.com/v1/chat/completions
 - [실습해보기](https://api.openai.com/v1/chat/completions)
 
-```
+```javascript
  $.ajax({
         type:"POST",
         url: "https://api.openai.com/v1/chat/completions",
@@ -52,7 +67,28 @@ https://api.openai.com/v1/chat/completions
 
     )
 ```
+- 이미지 생성
+```javascript
+    $.ajax({
+        type:"POST",
+        url: "https://api.openai.com/v1/images/generations",
+        headers:{
+            "Authorization": "Bearer " + OPENAPI_KEY
+        },
+        data: JSON.stringify(data),
+        contentType: "application/json; charset=utf-8"
+    }).done( function(response){
+        console.log(response)
+        //alert(response.choices[0].message.content)
+       gimage.src = response.data[0].url
+       gimage2.src = response.data[1].url
+    }).fail(function(error){
+        console.log(error)
+        errormsg = error.status + " : " + error.responseJSON.error.code + " - " + error.responseJSON.error.message
+        txtOut.value = (errormsg)
+    })
 
+```
 
 # gogle cloud vision
 
@@ -94,6 +130,9 @@ $.ajax({
     });
 
 ```
+- 실행결과
+
+<img src="face0.png"  width="400">
 
 
 개발순서
