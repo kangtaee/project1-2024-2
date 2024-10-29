@@ -1,23 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ChatGPT 개발</title>
+    <title>강태현의 인공지능 놀이터</title>
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="vision.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(horse.jpeg);
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #00ff15;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+        }
+
+        #fileInput {
+            margin-bottom: 20px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid #09ff00;
+        }
+
+        button {
+            background-color: #3cff00;
+            color: rgb(0, 0, 0);
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        button:hover {
+            background-color: #04ff00;
+        }
+
+        #gimage {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            margin: 20px auto;
+            border: 5px solid #00ff0d;
+            border-radius: 10px;
+        }
+
+        textarea {
+            width: 100%;
+            max-width: 600px;
+            height: 200px;
+            padding: 10px;
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+            margin-top: 20px;
+            resize: none;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
 </head>
 <body>
+    <h1>강태현의 인공지능 놀이터 - 구글 비전 API</h1>
+
+    <input type="file" id="fileInput" onchange="uploadFiles(this.files)">
+    <img id="gimage" src="" alt="선택한 이미지 미리보기">
+
+    <button onclick="analyze()">이미지 분석</button>
+
+    <textarea id="faceAnnotations" rows="10" cols="50" placeholder="이미지 분석 결과가 여기에 표시됩니다..."></textarea>
+    <a href="https://github.com/gang-0730" target="_blank">
+        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub" style="width:50px;height:50px;">
+    </a>
     
-    <h1>강태현의 인공지능 놀이터 구글 비전 API</h1>
-
-    <input type="file" onchange="uploadFiles(this.files)">
-    <input type="button" onclick="analyze()" value="이미지분석">
-
-
-    <img id="gimage" style="border:5px solid #555">
-
-    <textarea id="result" cols="30" rows="10"></textarea>
-
 </body>
 </html>
