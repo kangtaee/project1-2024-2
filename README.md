@@ -40,7 +40,7 @@ $.ajax({
 
 # openAI
 
-OpenAI에서 제공하는 텍스트새엇ㅇ 및 이미지 생성 실습 텍스트생성
+OpenAI에서 제공하는 텍스트 및 이미지 생성 실습 텍스트생성
 
 
 https://api.openai.com/v1/chat/completions
