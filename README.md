@@ -86,7 +86,6 @@ OpenAI에서 제공하는 텍스트 및 이미지 생성 실습 텍스트생성
 
 ♦️ google cloud vision 에서 제공하는 FaceDetection 실습
 
-OpenWeatherMap실습해보기
 
 ```
 $.ajax({
@@ -148,9 +147,31 @@ git config --global user.email"gang0730@shingu.ac.kr"
 -------------------------
 ### googleVisionAPI 내용 설명
 
-Google Cloud Vision API를 사용하여 이미지에서 얼굴을 감지하고, 감지된 얼굴의 감정 상태(기쁨, 슬픔, 화남, 놀람)를 분석하는 웹 애플리케이션의 JavaScript 코드입니다. 
+1. AJAX 요청 설정
+$.ajax를 통해 Google Vision API의 얼굴 분석(faceAnnotations) 기능을 호출합니다.
+요청 방식은 POST이며, 요청 URL은 Google API 키(GOOGLEAPI_KEY)를 포함합니다.
+요청 헤더는 JSON 형식으로 설정되어 있습니다.
 
-이미지 업로드: 사용자가 이미지를 업로드하면, 페이지에 미리보기가 표시됩니다.
-API 요청: 이미지를 Vision API로 보내 얼굴을 감지하고, 각 얼굴의 감정 상태를 분석합니다.
-github 아이콘: github아이콘 클릭시 강태현의 github사이트로 연결됩니다.
-결과 출력: 감지된 얼굴의 기쁨, 슬픔, 화남, 놀람의 확률을 분석하여 화면에 출력합니다.
+2. Google Vision API가 이미지 분석 결과를 반환하면, 반환된 데이터에는 이미지 속 사람들의 얼굴 정보와 감정 상태(웃는 표정, 우는 표정, 흐릿한 얼굴 등)가 포함됩니다. 감지된 얼굴이 여러 명일 경우, 각각의 얼굴에 대해 "무표정", "웃는 표정", "우는 표정", "얼굴이 흐릿함" 등의 감정 상태가 표시됩니다.
+
+3.응답 처리
+.done(function(response)) 메서드로 응답을 받아 처리합니다.
+응답에서 response.responses.faceAnnotations 값을 추출하여 얼굴 감정 정보를 얻습니다.
+
+4. 데이터 전송
+data 변수에 JSON 형태로 이미지 데이터가 담겨 있으며, 이를 JSON.stringify(data)로 문자열화하여 API에 전달합니다.
+
+5. 감정 정보 처리
+얼굴이 감지되었을 경우(annotations가 존재할 때), 각 얼굴마다 다음과 같은 감정 가능성(likelihood)을 확인합니다.
+
+- 기쁨 (joyLikelihood)
+
+- 슬픔 (sorrowLikelihood)
+
+- 화남 (angerLikelihood)
+
+- 놀람 (surpriseLikelihood)
+
+- 각 감정의 가능성을 translateLikelihood()라는 별도 함수로 한글로 변환하여 문자열에 추가합니다.
+
+- 여러 얼굴이 있을 경우, 각 얼굴별로 번호를 붙여 구분하여 표시합니다.
