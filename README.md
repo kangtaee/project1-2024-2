@@ -32,12 +32,12 @@ $.ajax({
 ```
 
 
-# openAI
+# OPEN AI
 
 OpenAI에서 제공하는 텍스트 및 이미지 생성 실습 텍스트생성
-
 [👉 실습해보기](https://platform.openai.com/docs/overview)
 
+♦️사용자의 입력부분을 OpenAi API를 사용해 텍스트 형태의 출력값을 가져옴
 ```javascript
  $.ajax({
         type:"POST",
@@ -59,7 +59,7 @@ OpenAI에서 제공하는 텍스트 및 이미지 생성 실습 텍스트생성
 
     )
 ```
-- 이미지 생성
+♦️ 사용자의 입력부분을 OpenAi API를 사용해 생성된 이미지를 2장 출력함
 ```javascript
     $.ajax({
         type:"POST",
@@ -84,9 +84,9 @@ OpenAI에서 제공하는 텍스트 및 이미지 생성 실습 텍스트생성
 
 # gogle cloud vision
 
-google cloud vision 으로 얼굴감지 하기
-https://vision.googleapis.com/v1/images:annotate?key=
-- [실습해보기](https://vision.googleapis.com/v1/images:annotate?key=)
+♦️ google cloud vision 에서 제공하는 FaceDetection 실습
+
+OpenWeatherMap실습해보기
 
 ```
 $.ajax({
