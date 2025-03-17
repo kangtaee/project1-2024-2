@@ -36,7 +36,7 @@ $.ajax({
 
 OpenAI에서 제공하는 텍스트 및 이미지 생성 실습 텍스트생성
 
-- [실습해보기][(https://platform.openai.com/docs/overview))]
+[👉 실습해보기](https://platform.openai.com/docs/overview)
 
 ```javascript
  $.ajax({
