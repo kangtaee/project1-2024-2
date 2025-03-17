@@ -11,9 +11,8 @@ OpenAPI를 사용한 이공지능 시스템 실습
 
 # openweathermap
 
-지정된 장소의 현재 날씨를 표시
-https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=7d96bc5108f52b80e2d9075a369b9f35
-- [실습해보기](https://api.openweathermap.org/data/2.5/weather?q=london&units=metric&appid=7d96bc5108f52b80e2d9075a369b9f35)
+♦️ 입력된 장소의 현재 날씨를 Openweathe API를 사용해 출력 OpenWeatherMap실습해보기
+
 
 
 ```javascript
@@ -37,9 +36,7 @@ $.ajax({
 
 OpenAI에서 제공하는 텍스트 및 이미지 생성 실습 텍스트생성
 
-
-https://api.openai.com/v1/chat/completions
-- [실습해보기](https://api.openai.com/v1/chat/completions)
+- [실습해보기][(https://platform.openai.com/docs/overview))]
 
 ```javascript
  $.ajax({
