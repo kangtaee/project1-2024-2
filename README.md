@@ -154,7 +154,7 @@ $.ajax를 통해 Google Vision API의 얼굴 분석(faceAnnotations) 기능을 �
 
 2. Google Vision API가 이미지 분석 결과를 반환하면, 반환된 데이터에는 이미지 속 사람들의 얼굴 정보와 감정 상태(웃는 표정, 우는 표정, 흐릿한 얼굴 등)가 포함됩니다. 감지된 얼굴이 여러 명일 경우, 각각의 얼굴에 대해 "무표정", "웃는 표정", "우는 표정", "얼굴이 흐릿함" 등의 감정 상태가 표시됩니다.
 
-3.응답 처리
+3. 응답 처리
 .done(function(response)) 메서드로 응답을 받아 처리합니다.
 응답에서 response.responses.faceAnnotations 값을 추출하여 얼굴 감정 정보를 얻습니다.
 
@@ -163,15 +163,9 @@ data 변수에 JSON 형태로 이미지 데이터가 담겨 있으며, 이를 JS
 
 5. 감정 정보 처리
 얼굴이 감지되었을 경우(annotations가 존재할 때), 각 얼굴마다 다음과 같은 감정 가능성(likelihood)을 확인합니다.
-
 - 기쁨 (joyLikelihood)
-
 - 슬픔 (sorrowLikelihood)
-
 - 화남 (angerLikelihood)
-
 - 놀람 (surpriseLikelihood)
-
 - 각 감정의 가능성을 translateLikelihood()라는 별도 함수로 한글로 변환하여 문자열에 추가합니다.
-
 - 여러 얼굴이 있을 경우, 각 얼굴별로 번호를 붙여 구분하여 표시합니다.
